@@ -1,10 +1,18 @@
-const menu = () => {
-  const menuBtn = document.querySelector("#menu-nav-btn");
-
-  menuBtn.addEventListener("click", function () {
-    console.log("clicked");
+function menu() {
+  const menuBtn = $("#menu-nav-btn");
+  const closeBtn = $("#close-menu");
+  const menu = $(".menu-nav");
+  menuBtn.click(function () {
+    menu.fadeIn(300);
   });
-};
+  closeBtn.click(function () {
+    menu.fadeOut(300);
+  });
+
+  $("#nav-dropdown-btn").click(function () {
+    $("#nav-dropdown-menu").slideToggle(300);
+  });
+}
 
 menu();
 
