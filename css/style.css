@@ -95,17 +95,8 @@ a {
 
 body {
   font-family: "Cairo", "sans-serif";
-  background-color: #fafafa;
   font-weight: 500;
   counter-reset: project-cates 0;
-}
-
-#fake-logo {
-  display: block;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: var(--clr-primary);
 }
 
 :root {
@@ -165,6 +156,14 @@ body {
 
 .back-white-transparent {
   background-color: rgb(255 255 255 / 62%);
+}
+
+.fill-primary {
+  fill: var(--clr-primary);
+}
+
+.fill-secondry {
+  fill: var(--clr-secondry);
 }
 
 .border-primary-1 {
@@ -248,7 +247,7 @@ body {
     font-size: 24px;
   }
   .font-large-title {
-    font-size: 28px;
+    font-size: 30px;
   }
 }
 
@@ -327,6 +326,10 @@ body {
 }
 
 /* ======================== Menu Nav ============================ */
+.logo-menu-btn-section {
+  top: 20px;
+}
+
 .menu-nav {
   position: absolute;
   right: 0;
@@ -681,6 +684,40 @@ body {
 
 .culture a:hover {
   background-color: #fff;
+}
+
+/* ========================= About Us ========================== */
+.page-image {
+  padding: 200px 20px 100px 20px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.about-us-page {
+  background-color: #fff;
+}
+
+/* about info */
+
+.about-info {
+  background-color: #e9eff6;
+}
+
+@media (min-width: 1400px) {
+  .about-info .row {
+    padding-right: 50px;
+    padding-left: 50px;
+  }
+}
+
+.about-info .about-info-box {
+  height: 100%;
+}
+
+.about-info .about-info-box svg {
+  width: 45px;
+  display: block;
 }
 
 /* ===================== footer ========================== */
