@@ -404,7 +404,7 @@ body {
   z-index: 33333;
 }
 
-@media (min-width: 767px) {
+@media (max-width: 1900px) and (min-width: 767px) {
   #menu-nav-btn {
     transition-delay: 1s;
     transition: 0.4s;
@@ -415,11 +415,11 @@ body {
   }
 
   #menu-nav-btn.menu-active {
-    transform: translateX(-285px);
-    -webkit-transform: translateX(-285px);
-    -moz-transform: translateX(-285px);
-    -ms-transform: translateX(-285px);
-    -o-transform: translateX(-285px);
+    transform: translateX(-250px);
+    -webkit-transform: translateX(-250px);
+    -moz-transform: translateX(-250px);
+    -ms-transform: translateX(-250px);
+    -o-transform: translateX(-250px);
   }
 }
 
@@ -431,15 +431,14 @@ body {
   .menu-nav {
     width: 100%;
   }
-  /* .hamburger-inner,
-  .hamburger-inner:after,
-  .hamburger-inner::before {
-    background-color: #fff;
-  } */
   .hamburger.is-active .hamburger-inner,
   .hamburger.is-active .hamburger-inner:after,
   .hamburger.is-active .hamburger-inner:before {
     background-color: #000;
+  }
+
+  #menu-nav-btn {
+    top: 21px;
   }
 }
 
@@ -479,6 +478,12 @@ body {
   width: 150px;
 }
 
+@media (min-width: 1500px) {
+  .landing-header .logo img {
+    width: 220px;
+  }
+}
+
 .landing-header video {
   object-fit: cover;
   top: 0;
@@ -495,7 +500,7 @@ body {
   font-size: 45px;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 991px) {
   .landing-header .content h1 {
     font-size: 28px;
   }
@@ -658,6 +663,11 @@ body {
 @media (min-width: 992px) {
   .culture {
     background-attachment: fixed;
+  }
+}
+@media (min-width: 1700px) {
+  .culture {
+    background-position: center center;
   }
 }
 
