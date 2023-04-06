@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lazourdy</title>
+    <link rel="stylesheet" href="css/hamburgers.min.css">
     <link rel="stylesheet" href="css/all.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/swiper.min.css">
@@ -14,13 +15,15 @@
 
 <body>
 
+
+
     <!-- ========================== Start Nav Menu ===================== -->
     <nav class="menu-nav pe-5">
         <ul>
             <li><a href="#">Home</a></li>
             <li><a href="#">About Us</a></li>
             <li><a href="#">Projects</a></li>
-            <li class="mb-3">
+            <li>
                 <span class="cursor-pointer text-black d-flex justify-content-between align-items-center w-100"
                     id="nav-dropdown-btn">
                     Services
@@ -28,15 +31,16 @@
                 </span>
                 <ul class="ps-3" id="nav-dropdown-menu">
                     <li><a href="#" class="light-text fw-normal fs-5">Building</a></li>
-                    <li><a href="#" class="light-text fw-normal fs-5"></a>Mep Work</a></li>
-                    <li><a href="#" class="light-text fw-normal fs-5"></a>Steel Structure</a></li>
+                    <li><a href="#" class="light-text fw-normal fs-5">Mep Work</a></li>
+                    <li><a href="#" class="light-text fw-normal fs-5">Steel Structure</a></li>
                 </ul>
             </li>
             <li><a href="#">Careers</a></li>
             <li><a href="#">News</a></li>
             <li><a href="#">Contact</a></li>
         </ul>
-        <i class="fas fa-xmark fa-2x text-white position-absolute cursor-pointer" id="close-menu"></i>
+
+
     </nav>
 
     <!-- ========================= End Nav Menu ======================== -->
@@ -45,27 +49,26 @@
     <!-- ========================== Start header ========================== -->
     <header class="landing-header position-relative pt-4">
         <div class="container-fluid p-0 overflow-hidden">
-
-
             <video muted autoplay loop class="position-absolute top-0 start-0 w-100 h-100">
                 <source src="images/final.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-
-
-
         </div>
-
-        <div class="container d-flex justify-content-between align-items-center position-relative z-index-333">
-            <div class="logo"><a href="#"><img src="images/footer_logo.svg" alt="logo"></a></div>
-            <div class="menu-nav-btn cursor-pointer me-3" id="menu-nav-btn">
-                <i class="fas fa-bars fa-2x text-white"></i>
+        <div class="container">
+            <div class="hamburger hamburger--collapse menu-nav-btn cursor-pointer me-3" id="menu-nav-btn">
+                <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                </span>
             </div>
         </div>
-        <div class="container ">
+        <div class="container d-flex justify-content-between align-items-center position-relative z-index-333">
+            <div class="logo"><a href="#"><img src="images/footer_logo.svg" alt="logo"></a></div>
+
+        </div>
+        <div class="container">
             <div class="content w-sm-100 text-md-start text-center">
                 <span class="text-white font-18">National company based in Abu Dhabi - UAE</span>
-                <h1 class="fs-1 text-white fw-bold mt-2">
+                <h1 class="text-white fw-semibold mt-2">
                     First Classification Category<br> in Building Contracting
                 </h1>
                 <a href="#"
@@ -111,7 +114,16 @@
                         </p>
                         <div class="about-last-text">
                             <div class="quote">
-                                <i class="fas fa-quote-left"></i>
+                                <svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs"
+                                    width="512" height="512" x="0" y="0" viewBox="0 0 409.294 409.294"
+                                    style="enable-background:new 0 0 512 512" xml:space="preserve" class="">
+                                    <g>
+                                        <path
+                                            d="M0 204.647v175.412h175.412V204.647H58.471c0-64.48 52.461-116.941 116.941-116.941V29.235C78.684 29.235 0 107.919 0 204.647zM409.294 87.706V29.235c-96.728 0-175.412 78.684-175.412 175.412v175.412h175.412V204.647H292.353c0-64.48 52.461-116.941 116.941-116.941z"
+                                            class=""></path>
+                                    </g>
+                                </svg>
                             </div>
                             <img src="images/back_logo.png" alt="logo">
                             <p class="fw-semibold position-relative z-index-333">
@@ -136,7 +148,7 @@
             <div class="row align-items-center">
                 <div class="col-12 col-md-6 mb-3">
                     <h4 class="mb-3 fw-semibold fs-3">Our Projects</h4>
-                    <p class="lh-lg light-text">
+                    <p class="lh-lg light-text fs-5">
                         You can use these sections to highlight the features of heading. Use
                         these paragraphs to focus on the topic you want. Make sure you keep
                         it short and attractive.
@@ -470,8 +482,7 @@
                         </a>
                     </div>
                     <div>
-                        <h4 class='text-white fs-3 fw-semi-bold my-3'>Certified in</h4>
-                        <div class="d-flex justify-content-between rounded-3 certified-box p-2">
+                        <div class="mt-4 d-flex justify-content-between rounded-3 certified-box p-2">
                             <div><img src="./images/certified_1.png" alt="certified"></div>
                             <div class='mx-3'><img src="./images/certified_2.png" alt="certified">
                             </div>
@@ -495,7 +506,7 @@
                         <h5 class='fs-3 fw-semibold text-white'>Our Services</h5>
                         <ul>
                             <li><a href="#" class='mb-2 d-block'>Building</a></li>
-                            <li><a href="#" class='mb-2 d-block'>Mep Work</a></li>
+                            <li><a href="#" class='mb-2 d-block'> Mep Work </a></li>
                             <li><a href="#" class='mb-2 d-block'> Steel Structure</a></li>
                         </ul>
                     </div>
@@ -547,8 +558,6 @@
 
 
     <!-- =========================== End Footer ============================= -->
-
-
 
 
 

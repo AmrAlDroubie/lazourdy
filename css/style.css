@@ -110,7 +110,7 @@ body {
 
 :root {
   --clr-primary: #26abe3;
-  --clr-secondry: #2d2d2d;
+  --clr-secondry: #1a1a1a;
   --clr-white: #fff;
   --tran-primary: 0.4s;
   --font-primary: "Jozoor Font", "sans-serif";
@@ -228,6 +228,10 @@ body {
 
 .font-large-title {
   font-size: 45px;
+}
+
+.fw-bold {
+  font-weight: 600 !important;
 }
 
 @media (max-width: 767px) {
@@ -371,40 +375,88 @@ body {
   top: 38px;
 }
 
-@media (max-width: 767px) {
-  #close-menu {
-    right: 30px;
-    left: auto;
-    color: #000 !important;
-  }
-  .menu-nav {
-    width: 100%;
-  }
-}
-
 #nav-dropdown-menu {
   display: none;
 }
 
-@keyframes activeMenu {
-  0% {
-    opacity: 0;
+.hamburger-inner,
+.hamburger-inner:after,
+.hamburger-inner::before {
+  position: absolute;
+  width: 32px;
+  height: 4px;
+  transition-timing-function: ease;
+  transition-duration: 0.15s;
+  transition-property: transform;
+  border-radius: 4px;
+  background-color: #fff;
+}
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner:after,
+.hamburger.is-active .hamburger-inner:before {
+  background-color: #fff;
+}
+
+#menu-nav-btn {
+  position: absolute;
+  top: 40px;
+  right: 3%;
+  z-index: 33333;
+}
+
+@media (min-width: 767px) {
+  #menu-nav-btn {
+    transition-delay: 1s;
+    transition: 0.4s;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
   }
-  100% {
-    opacity: 1;
+
+  #menu-nav-btn.menu-active {
+    transform: translateX(-285px);
+    -webkit-transform: translateX(-285px);
+    -moz-transform: translateX(-285px);
+    -ms-transform: translateX(-285px);
+    -o-transform: translateX(-285px);
   }
 }
 
-@keyframes closeMenu {
-  0% {
-    opacity: 1;
+@media (max-width: 767px) {
+  #close-menu {
+    right: 30px;
+    left: auto;
   }
-  50% {
-    opacity: 0;
+  .menu-nav {
+    width: 100%;
   }
-  100% {
-    display: none;
+  /* .hamburger-inner,
+  .hamburger-inner:after,
+  .hamburger-inner::before {
+    background-color: #fff;
+  } */
+  .hamburger.is-active .hamburger-inner,
+  .hamburger.is-active .hamburger-inner:after,
+  .hamburger.is-active .hamburger-inner:before {
+    background-color: #000;
   }
+}
+
+.menu-nav .fa-angle-down {
+  transition: 0.4s;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -ms-transition: 0.4s;
+  -o-transition: 0.4s;
+}
+
+.menu-nav .fa-angle-down.active {
+  transform: rotate(-180deg);
+  -webkit-transform: rotate(-180deg);
+  -moz-transform: rotate(-180deg);
+  -ms-transform: rotate(-180deg);
+  -o-transform: rotate(-180deg);
 }
 
 /* ======================= Landing Header ====================== */
@@ -417,7 +469,7 @@ body {
   width: 100%;
   height: 100%;
   position: absolute;
-  background-color: rgb(0 0 0 / 31%);
+  background-color: rgb(36 172 227 / 12%);
   top: 0;
   left: 0;
   z-index: 3;
@@ -437,6 +489,20 @@ body {
   position: absolute;
   top: 60%;
   z-index: 333;
+}
+
+.landing-header .content h1 {
+  font-size: 45px;
+}
+
+@media (max-width: 767px) {
+  .landing-header .content h1 {
+    font-size: 28px;
+  }
+}
+
+.landing-header .content a:hover {
+  background-color: #fff;
 }
 
 @media (max-width: 991.98px) {
@@ -484,9 +550,9 @@ body {
 
 .project-cates .project::after {
   counter-increment: project-cates;
-  content: "0" counter(project-cates);
+  content: "0" counter(project-cates) ".";
   font-size: 140px;
-  font-weight: bold;
+  font-weight: 500;
   position: absolute;
   top: 99px;
   color: #ffffffb8;
@@ -504,6 +570,14 @@ body {
 }
 .client-slide img {
   width: 150px;
+}
+
+.our-clients-next {
+  left: 100px !important;
+}
+
+.our-clients-prev {
+  right: 100px !important;
 }
 
 /* ====================== about us ===================== */
@@ -563,12 +637,12 @@ body {
   position: relative;
 }
 
-.about-last-text .quote i {
+.about-last-text .quote svg {
   position: absolute;
   z-index: 1;
-  color: #cbcbcb52;
-  font-size: 150px;
-  top: -104px;
+  fill: #cbcbcb52;
+  width: 104px;
+  top: -275px;
 }
 
 /* ========================= culture ======================= */
@@ -578,11 +652,12 @@ body {
   background-repeat: no-repeat;
   padding-top: 40px;
   padding-bottom: 40px;
+  background-position: bottom;
 }
 
 @media (min-width: 992px) {
   .culture {
-    background-position: center center;
+    background-attachment: fixed;
   }
 }
 
@@ -601,7 +676,14 @@ body {
 /* ===================== footer ========================== */
 
 .certified-box {
-  background-color: #fff;
+  background-color: #00000061;
+  width: 80%;
+  max-width: 250px;
+}
+
+.footer .logo img {
+  width: 80%;
+  max-width: 250px;
 }
 
 .footer ul li a,

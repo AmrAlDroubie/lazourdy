@@ -2,15 +2,21 @@ function menu() {
   const menuBtn = $("#menu-nav-btn");
   const closeBtn = $("#close-menu");
   const menu = $(".menu-nav");
+  let menuState = false;
   menuBtn.click(function () {
-    menu.fadeIn(300);
-  });
-  closeBtn.click(function () {
-    menu.fadeOut(300);
+    menuState = !menuState;
+    menu.fadeToggle(300);
+    $(this).toggleClass("menu-active");
+    menuBtn.toggleClass("is-active");
+    if (window.innerWidth <= 766) {
+      if (menuState) $("body").css("overflow", "hidden");
+      else $("body").css("overflow", "auto");
+    }
   });
 
   $("#nav-dropdown-btn").click(function () {
     $("#nav-dropdown-menu").slideToggle(300);
+    $(".fa-angle-down").toggleClass("active");
   });
 }
 
