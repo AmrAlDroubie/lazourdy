@@ -59,6 +59,49 @@ if (document.querySelector("#client-slider")) {
   });
 }
 
+if (document.querySelector(".project-slider")) {
+  // Slider
+  const projectSliderBoxes = document.querySelectorAll(".project-slider");
+  projectSliderBoxes.forEach((projectSlider) => {
+    new Swiper("#" + projectSlider.id, {
+      loop: true,
+      slidesPerView: 1,
+      navigation: {
+        nextEl: "#project-slider-next" + projectSlider.dataset.projectnum,
+        prevEl: "#project-slider-prev" + projectSlider.dataset.projectnum,
+      },
+    });
+  });
+  if (window.innerWidth >= 1000) {
+    // Image Popup
+    const allProjectsImages = document.querySelectorAll(
+      ".project-slider .swiper-slide img"
+    );
+    allProjectsImages.forEach((image) => {
+      image.addEventListener("click", function () {
+        let popupHtml = `
+      <div class="modal modal-xl fade" tabindex="-1" id="project-image-popup">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <i class="fas fa-xmark close-pop-projects position-absolute text-white back-primary cursor-pointer fa-2x end-0"></i>
+                  <img src=${this.src} alt="project">
+              </div>
+          </div>
+      </div>
+      `;
+        document.querySelector(".project-image-pop").innerHTML = popupHtml;
+        const projectImagePopup = new bootstrap.Modal(
+          document.getElementById("project-image-popup")
+        );
+        projectImagePopup.show();
+        document
+          .querySelector(".close-pop-projects")
+          .addEventListener("click", () => projectImagePopup.hide());
+      });
+    });
+  }
+}
+
 const current_year = () => {
   const footer_year = document.querySelector("#footer-year");
   const date = new Date();
