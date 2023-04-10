@@ -100,6 +100,39 @@ if (document.querySelector(".project-slider")) {
       });
     });
   }
+
+  // project images lazy load
+
+  const targets = document.querySelectorAll(".project-box-slider img");
+
+  const lazyLoad = (target) => {
+    const io = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          const src = img.getAttribute("data-src");
+          img.setAttribute("src", src);
+          img.classList.add("fade");
+
+          observer.disconnect();
+        }
+      });
+    });
+
+    io.observe(target);
+  };
+
+  targets.forEach(lazyLoad);
+}
+
+// load video
+
+if (document.querySelector(".landing-header video")) {
+  const headerVideo = document.querySelector(".landing-header video");
+  headerVideo.onloadeddata = function () {
+    headerVideo.classList.remove("d-none");
+    document.querySelector(".landing-header").style.backgroundImage = "none";
+  };
 }
 
 const current_year = () => {

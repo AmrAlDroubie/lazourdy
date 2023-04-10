@@ -468,6 +468,7 @@ body {
 /* ======================= Landing Header ====================== */
 .landing-header {
   min-height: 100vh;
+  background-image: url("../images/header_back.jpg");
 }
 
 .landing-header::before {
@@ -805,6 +806,21 @@ body {
   object-fit: cover;
   object-position: center;
   cursor: pointer;
+  opacity: 0;
+  transition: 0.4s;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -ms-transition: 0.4s;
+  -o-transition: 0.4s;
+}
+
+.project-slider img.fade {
+  opacity: 1;
+  transition: 0.4s;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -ms-transition: 0.4s;
+  -o-transition: 0.4s;
 }
 
 .project-slider-nav {
@@ -872,6 +888,10 @@ body {
 
 .footer-copy-right {
   border-top: 1px solid #d1d1d1;
+}
+
+.footer-copy-right p {
+  color: #fff;
 }
 
 .footer-back img {
