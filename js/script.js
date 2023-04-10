@@ -129,9 +129,13 @@ if (document.querySelector(".project-slider")) {
 
 if (document.querySelector(".landing-header video")) {
   const headerVideo = document.querySelector(".landing-header video");
-  headerVideo.onloadeddata = function () {
-    headerVideo.classList.remove("d-none");
-    document.querySelector(".landing-header").style.backgroundImage = "none";
+  window.onload = function () {
+    headerVideo.onloaddata = function () {
+      headerVideo.querySelector("source").src = headerVideo
+        .querySelector("source")
+        .getAttribute("data-src");
+      document.querySelector(".landing-header").style.backgroundImage = "none";
+    };
   };
 }
 
