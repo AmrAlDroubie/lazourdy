@@ -867,6 +867,10 @@ body {
   align-items: center;
   justify-content: center;
 }
+#map {
+  height: 500px;
+  padding: 0;
+}
 
 /* ===================== footer ========================== */
 
